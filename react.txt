@@ -1,0 +1,19 @@
+react 
+- javascript 라이브러리
+- element를 만들어서 화면에 뿌려준다.
+- element를 만든방법은 
+  1. DOM Tag를 이용 - html 기본 태그
+  2. Component를 이용 - 사용자 정의 태그
+- element 특징 : immutable(불변성)
+
+Component 특징
+- 이름의 첫글자는 대문자를 사용
+- function type / class type
+
+
+html의 이벤트
+<input type="button" onclick="alert("hi")">
+react의 이벤트
+<input type="button" onClick={alert("hi")}>
+
+react : state

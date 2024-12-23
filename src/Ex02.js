@@ -2,7 +2,15 @@ function Header(props) {
     console.log(props);
     return (
         <header>
-            <h1><a href="/">{props.title}</a></h1>
+            <h1><a href="/" onClick={function(event){
+                // a tag는 클릭스 페이지가 이동
+                // javascript에서 페이지가 이동안되게 하려면
+                // return false;
+                // react는 return false; 동작이 없습니다.
+                // react에서 페이지 이동이 안되게 하려면
+                event.preventDefault();
+                alert("Hi");
+            }}>{props.title}</a></h1>
         </header>
     );
 }
@@ -11,7 +19,11 @@ function Nav(props) {
     const lis = [];
     for(let i=0 ; i<props.topics.length ; i++) {
         let t = props.topics[i];
-        lis.push(<li key={t.id}><a href={"/read/" + t.id}>{t.title}</a></li>)
+        lis.push(<li key={t.id}><a href={"/read/" + t.id} onClick={
+            (event) => {
+                alert(t.id);
+            }
+        }>{t.title}</a></li>)
     }
     return (
         <nav>
