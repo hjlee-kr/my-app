@@ -134,10 +134,23 @@ function Ex02() {
         console.log("title:", title, "content:", content);
         element = <Article title={title} content={content} />;
         console.log(content);
-        elementUpdate = <li><a href={'/update/'+id} onClick={(event)=>{
+        elementUpdate = <>
+        <li><a href={'/update/'+id} onClick={(event)=>{
             event.preventDefault();
             setMode('UPDATE');
-        }}>Update</a></li>;
+        }}>Update</a></li>
+        <li><input type="button" value="Delete" onClick={()=>{
+            // Delete Button을 클릭했을때 처리
+            let newTopics = [];
+            for (let i=0 ; i<topics.length ; i++) {
+                if (topics[i].id !== id) {
+                    newTopics.push(topics[i]);
+                }
+            }
+            setTopics(newTopics);
+            setMode('WELCOME');
+        }}></input></li>
+        </>;
     } else if (mode === 'CREATE') {
         element = <Create onCreate={(_title, _content)=>{
             console.log("title:", _title);

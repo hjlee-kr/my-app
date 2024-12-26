@@ -1,6 +1,6 @@
 react 
 - javascript 라이브러리
-- element를 만들어서 화면에 뿌려준다.
+- element를 만들어서 화면에 뿌려준다.(랜더링)
 - element를 만든방법은 
   1. DOM Tag를 이용 - html 기본 태그
   2. Component를 이용 - 사용자 정의 태그
@@ -17,3 +17,9 @@ react의 이벤트
 <input type="button" onClick={alert("hi")}>
 
 react : state
+
+- Hook : version 16.8 이후
+- function type의 Component에서만 사용자
+- 최상위 레벨에서 사용되고
+- 순서가 변하지 않는다
+- 앞에 use로 시작됩니다.
